@@ -192,30 +192,30 @@
                 <div class="col-lg-4 col-md-6 ">
                     <div class="popular-item ">
                         <div class="popular-thumb overlay-thumb">
-                            <a href="#"><img th:src="@{/assets/images/popular/tiananmen-010.jpg}" alt="popular"></a>
+                            <a href="item/beijing"><img th:src="@{/assets/images/popular/tiananmen-010.jpg}" alt="popular"></a>
                         </div>
                         <div class="popular-content">
-                            <h4 class="title"><a href="#">北京</a></h4>
+                            <h4 class="title"><a href="item/beijing">北京</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 ">
                     <div class="popular-item ">
                         <div class="popular-thumb overlay-thumb">
-                            <a href="#"><img th:src="@{/assets/images/popular/kanas-011.jpg}" alt="popular"></a>
+                            <a href="item/kanasi"><img th:src="@{/assets/images/popular/kanas-011.jpg}" alt="popular"></a>
                         </div>
                         <div class="popular-content">
-                            <h4 class="title"><a th:href="/item/findAll(placename='喀纳斯')">喀纳斯</a></h4>
+                            <h4 class="title"><a href="item/kanasi">喀纳斯</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 ">
                     <div class="popular-item ">
                         <div class="popular-thumb overlay-thumb">
-                            <a href="#"><img th:src="@{/assets/images/popular/statue_of_liberty.jpg}" alt="popular"></a>
+                            <a href="item/nyc"><img th:src="@{/assets/images/popular/statue_of_liberty.jpg}" alt="popular"></a>
                         </div>
                         <div class="popular-content">
-                            <h4 class="title"><a href="#">纽约</a></h4>
+                            <h4 class="title"><a href="item/nyc">纽约</a></h4>
                         </div>
                     </div>
                 </div>
@@ -235,8 +235,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <form class="newslater-form">
-                        <input type="text" placeholder="目的地">
+                    <form class="newslater-form" th:method="post">
+                        <input type="text" placeholder="目的地" name="search">
                         <label for="n1"><i class="far fa-paper-plane"></i></label>
                         <input type="submit" value="" id="n1">
                     </form>

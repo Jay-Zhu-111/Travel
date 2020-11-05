@@ -16,7 +16,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(User user) {
-        user.setRecommend("userrecommendSet in userservice");
         userDao.save(user);
     }
 

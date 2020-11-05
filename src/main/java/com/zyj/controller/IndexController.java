@@ -26,4 +26,9 @@ public class IndexController {
     public String toRegister(){
         return "/travel/register";
     }
+
+    @GetMapping("/map")
+    public String map(){
+        return "/travel/map";
+    }
 }
