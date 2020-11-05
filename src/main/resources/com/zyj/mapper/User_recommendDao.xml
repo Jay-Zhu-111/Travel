@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyj.dao.User_recommendDao">
+
+    <select id="findRecommendByUserPlace" resultType="String">
+        select recommend from user_recommend where username=#{username} and placename=#{placename}
+    </select>
+
+</mapper>
