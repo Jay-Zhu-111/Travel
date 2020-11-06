@@ -1,14 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 97%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=ehrGNgygMwfxR6D42PQViy7tvlOOfShe"></script>
     <title>Travel</title>
 
 </head>
 <body>
-    <h1>map</h1>
+    <div id="allmap"></div>
+    <div class="container" style="text-align: center">
+        <a href="#" class="custom-button" onclick="history.go(-1)">返回</a>
+    </div>
 </body>
 </html>
+
+<script type="text/javascript">
+
+    var longitudes = [[${longitudes}]];
+    var latitudes = [[${latitudes}]];
+
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    map.centerAndZoom(new BMap.Point(longitudes[0], latitudes[0]), 11);
+    map.enableScrollWheelZoom(true);
+
+    var start = new BMap.Point(longitudes[0], latitudes[0]);
+    var end = new BMap.Point(longitudes[1], latitudes[1]);
+
+    var pointList = [];
+    for (let i = 2; i < longitudes.length; i++) {
+        pointList[i - 2] = new BMap.Point(longitudes[i], latitudes[i]);
+    }
+
+    var driving = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+    driving.search(start, end,{waypoints:pointList});//waypoints表示途经点
+
+</script>

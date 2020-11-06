@@ -30,6 +30,7 @@ public class ItemController {
         String placename = "北京";
         model.addAttribute("placename", placename);
         List<Item> list = findByPlace(placename);
+        Common.recommendList = list;
         model.addAttribute("items", list);
         return "/travel/recommendList";
     }
@@ -39,6 +40,7 @@ public class ItemController {
         String placename = "喀纳斯";
         model.addAttribute("placename", placename);
         List<Item> list = findByPlace(placename);
+        Common.recommendList = list;
         model.addAttribute("items", list);
         return "/travel/recommendList";
     }
@@ -48,6 +50,7 @@ public class ItemController {
         String placename = "纽约";
         model.addAttribute("placename", placename);
         List<Item> list = findByPlace(placename);
+        Common.recommendList = list;
         model.addAttribute("items", list);
         return "/travel/recommendList";
     }
